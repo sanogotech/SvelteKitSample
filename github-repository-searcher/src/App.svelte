@@ -6,8 +6,17 @@
  -->
  
 <script>
+
+	import Home from "./routes/Home.svelte";
+	import About from "./routes/About.svelte";
+	import Nested from './Nested.svelte';
+	
+	export let url = "";
+	
 	export let name;
 	let paraphcss = "paraphcss";
+	
+
 </script>
 
 <style>
@@ -31,9 +40,28 @@
 	font-size: 120%;
 	color: red;
   }
+  
+  
+  	p {
+		color: purple;
+		font-family: 'Comic Sans MS', cursive;
+		font-size: 2em;
+	}
 </style>
 
 <main>
+
+
+  <nav>
+    <a href="/">home</a>
+    <a href="/about">about</a>
+    <a href="/profile">profile</a>
+    <a href="/news">news</a>
+	
+  </nav>
+
+
+
   <form>
     <label for="username">Enter a GitHub username:</label>
     <input type="text" name="username" placeholder="jackfranklin" />
@@ -41,6 +69,10 @@
   </form>
   
   <br/>
+  
+	<p>These styles...</p>
+  <Nested/>
+  
   <br/>
 		<p class={paraphcss}>Some text</p>
   <br/>
